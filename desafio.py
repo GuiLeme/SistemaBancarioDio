@@ -22,6 +22,9 @@ while True:
     if opcao == "d":
         # TODO: V1 - Só terá apenas um usuário
         quantia_desejada = float(input("Quanto deseja depositar? R$ "))
+        if quantia_desejada <= 0:
+            print("Por favor, digite um valor coerente")
+            continue
         extrato.append({"transacao": "d", "quantia": quantia_desejada, "date": datetime.datetime.now()})
         saldo += quantia_desejada
         print("Depósito efetuado com sucesso.")
@@ -52,6 +55,7 @@ while True:
         print("Saldo atual R${:.2f}".format(saldo))
     
     elif opcao == "q":
+        print("Obrigado pela visita, até mais!")
         break
 
     else:
